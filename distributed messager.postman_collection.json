@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "05386d18-4e27-4924-b2ea-2ca26fddbeeb",
+		"name": "distributed messager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6245410"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dimchik\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/write/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "b344d1ea-4925-4241-9ad9-eabb047b90ea",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chatName\": \"First Chat\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/write/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Join chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ea6366fe-4e0c-4bc1-9971-9b1aafabad73",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/write/chat/b344d1ea-4925-4241-9ad9-eabb047b90ea/join",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"chat",
+						"b344d1ea-4925-4241-9ad9-eabb047b90ea",
+						"join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "2e2edae5-60d1-4025-81b0-e8e7b5116b97",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/write/chat/55ebb53b-5d1c-428d-b894-c066a175b6fb/leave",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"chat",
+						"55ebb53b-5d1c-428d-b894-c066a175b6fb",
+						"leave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "8d6e7ef3-e425-47f2-8f96-3d8554efce7f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chatId\": \"b344d1ea-4925-4241-9ad9-eabb047b90ea\",\n    \"message\": \"bobo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/write/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete chat",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "userId",
+						"value": "8605f73b-0432-4eed-8a99-f88f4d5063e3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/write/chat/6137aa1a-2f36-4871-bfd5-8e65a8cdc3f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"write",
+						"chat",
+						"6137aa1a-2f36-4871-bfd5-8e65a8cdc3f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/read/user/8605f73b-0432-4eed-8a99-f88f4d5063e3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"read",
+						"user",
+						"8605f73b-0432-4eed-8a99-f88f4d5063e3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/read/chat/55ebb53b-5d1c-428d-b894-c066a175b6fb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"read",
+						"chat",
+						"55ebb53b-5d1c-428d-b894-c066a175b6fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get last N messages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ea6366fe-4e0c-4bc1-9971-9b1aafabad73",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"last\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/read/chat/b344d1ea-4925-4241-9ad9-eabb047b90ea/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"read",
+						"chat",
+						"b344d1ea-4925-4241-9ad9-eabb047b90ea",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get messages for time period",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ea6366fe-4e0c-4bc1-9971-9b1aafabad73",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"2024-11-28T19:42:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/read/chat/b344d1ea-4925-4241-9ad9-eabb047b90ea/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"read",
+						"chat",
+						"b344d1ea-4925-4241-9ad9-eabb047b90ea",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
