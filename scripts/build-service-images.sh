@@ -1,4 +1,4 @@
-ROOT_FOLDER=/Users/dimonster/Desktop/homework/PIC/distributed-messager
+ROOT_FOLDER=/Users/vladshakhtar/Downloads/distributed-messager-main/distributed-messager
 
 cd $ROOT_FOLDER
 
